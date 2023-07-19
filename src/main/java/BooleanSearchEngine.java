@@ -39,8 +39,8 @@ public class BooleanSearchEngine implements SearchEngine {
                         List<PageEntry> entries = index.getOrDefault(word, new ArrayList<>());
                         entries.add(pageEntry);
                         index.put(word, entries);
+                        Collections.sort(entries);
                     }
-
                 }
                 document.close();
             } catch (Exception e) {

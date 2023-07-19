@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class PageEntry implements Comparable<PageEntry> {
     private final String pdfName;
     private final int page;
@@ -34,6 +36,14 @@ public class PageEntry implements Comparable<PageEntry> {
 
     @Override
     public int compareTo(PageEntry o) {
-        return Integer.compare(o.count, this.getCount());
+        if (this.getCount() == o.count) {
+            return 0;
+        }
+        else if (this.getCount() < o.count) {
+
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }
